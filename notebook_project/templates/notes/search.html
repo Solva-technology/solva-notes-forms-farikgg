@@ -1,0 +1,23 @@
+{% extends 'notes/base.html' %}
+{% load static %}
+
+{% block title %}Поиск{% endblock %}
+
+{% block content %}
+  <h2>Поиск заметок</h2>
+
+  <form method='GET'>
+    {% csrf_token %}
+    <label for='note_id'>Поиск по ID Заметки:</label>
+    <input type='number' name='note_id' id='note_id'>
+    <button type='submit'>Найти</button>
+  </form>
+
+  <form method='GET'>
+    {% csrf_token %}
+    <label for='category'>Поиск по ID Пользователя:</label>
+    <input type='text' name='user_id' id='user_id'>
+    <button type='submit'>Найти</button>
+  </form>
+
+{% endblock %}

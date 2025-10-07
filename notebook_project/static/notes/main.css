@@ -1,0 +1,171 @@
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+header {
+    background: #4a90e2;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+header .navigator {
+    display: flex;
+    justify-content: center;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+header nav a:hover {
+    color: #dbe9ff;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 1rem;
+    padding: 0.8rem 1rem;
+    background: #f0f4f8;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+ul li:hover {
+    background: #e6eef5;
+}
+
+ul li a {
+    font-weight: 600;
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+h1, h2 {
+    color: #222;
+}
+
+form {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #f0f4f8;
+    border-radius: 8px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+form input {
+    padding: 0.5rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+form button {
+    background: #4a90e2;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+form button:hover {
+    background: #357abd;
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    text-align: center;
+    background: #f0f4f8;
+    font-size: 0.9rem;
+    color: #555;
+    border-top: 1px solid #ddd;
+}
+
+.error-page {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.error-page h1 {
+    font-size: 6rem;
+    font-weight: bold;
+    color: #4a90e2;
+    margin-bottom: 1rem;
+}
+
+.error-page p {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.error-page .btn {
+    display: inline-block;
+    background: #4a90e2;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.error-page .btn:hover {
+    background: #357abd;
+}
+
+a.btn-primary {
+    display: inline-block;
+    background: #4a90e2;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.btn-primary:hover {
+    background: #357abd;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+a.btn-primary:active {
+    background: #2c5d91;
+}

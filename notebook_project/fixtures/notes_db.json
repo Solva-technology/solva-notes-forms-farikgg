@@ -1,0 +1,212 @@
+[
+  {
+    "model": "notes.user",
+    "pk": 1,
+    "fields": {
+      "name": "Иван Петров",
+      "email": "ivan.petrov@example.com"
+    }
+  },
+  {
+    "model": "notes.user",
+    "pk": 2,
+    "fields": {
+      "name": "Павел Смирнов",
+      "email": "pavel.smirnov@example.com"
+    }
+  },
+  {
+    "model": "notes.user",
+    "pk": 3,
+    "fields": {
+      "name": "Дмитрий Орлов",
+      "email": "dmitriy.orlov@example.com"
+    }
+  },
+  {
+    "model": "notes.user",
+    "pk": 4,
+    "fields": {
+      "name": "Анна Ким",
+      "email": "anna.kim@example.com"
+    }
+  },
+
+  {
+    "model": "notes.userprofile",
+    "pk": 1,
+    "fields": {
+      "bio": "Фронтенд-разработчик, любит React и дизайн систем.",
+      "birth_date": "2000-03-15",
+      "user": 1
+    }
+  },
+  {
+    "model": "notes.userprofile",
+    "pk": 2,
+    "fields": {
+      "bio": "Студентка-журналистка, интересуется медиа и блогингом.",
+      "birth_date": "1999-08-21",
+      "user": 2
+    }
+  },
+  {
+    "model": "notes.userprofile",
+    "pk": 3,
+    "fields": {
+      "bio": "Python backend developer, увлекается спортом и AI.",
+      "birth_date": "2001-01-05",
+      "user": 3
+    }
+  },
+  {
+    "model": "notes.userprofile",
+    "pk": 4,
+    "fields": {
+      "bio": "UI/UX дизайнер, обожает минимализм и японскую эстетику.",
+      "birth_date": "1998-11-30",
+      "user": 4
+    }
+  },
+
+  {
+    "model": "notes.status",
+    "pk": 1,
+    "fields": { "name": "Черновик", "is_final": false }
+  },
+  {
+    "model": "notes.status",
+    "pk": 2,
+    "fields": { "name": "На проверке", "is_final": false }
+  },
+  {
+    "model": "notes.status",
+    "pk": 3,
+    "fields": { "name": "Опубликовано", "is_final": true }
+  },
+  {
+    "model": "notes.status",
+    "pk": 4,
+    "fields": { "name": "Архивировано", "is_final": true }
+  },
+
+  {
+    "model": "notes.category",
+    "pk": 1,
+    "fields": { "title": "Технологии", "description": "Все про IT, кодинг и разработки" }
+  },
+  {
+    "model": "notes.category",
+    "pk": 2,
+    "fields": { "title": "Путешествия", "description": "Опыт поездок и заметки о странах" }
+  },
+  {
+    "model": "notes.category",
+    "pk": 3,
+    "fields": { "title": "Личное", "description": "Личные мысли и истории" }
+  },
+  {
+    "model": "notes.category",
+    "pk": 4,
+    "fields": { "title": "Учёба", "description": "Заметки о курсовых, лекциях и экзаменах" }
+  },
+  {
+    "model": "notes.category",
+    "pk": 5,
+    "fields": { "title": "Искусство", "description": "Рисование, музыка, театр" }
+  },
+  {
+    "model": "notes.category",
+    "pk": 6,
+    "fields": { "title": "Здоровье", "description": "Фитнес, питание и медитация" }
+  },
+
+  {
+    "model": "notes.note",
+    "pk": 1,
+    "fields": {
+      "text": "Сегодня начал изучать Django. Первые впечатления: структура проекта удобная, но есть свои тонкости с настройками...",
+      "author": 1,
+      "status": 1,
+      "created_at": "2025-09-20T10:15:00Z",
+      "category": [1, 4]
+    }
+  },
+  {
+    "model": "notes.note",
+    "pk": 2,
+    "fields": {
+      "text": "Мой новый блог про путешествия в Италию. Рим, Флоренция и Венеция — города, которые вдохновляют и удивляют...",
+      "author": 2,
+      "status": 2,
+      "created_at": "2025-09-21T14:40:00Z",
+      "category": [2, 5]
+    }
+  },
+  {
+    "model": "notes.note",
+    "pk": 3,
+    "fields": {
+      "text": "Решил написать заметку про архитектуру REST API. Основные принципы: stateless, client-server и кэширование...",
+      "author": 3,
+      "status": 3,
+      "created_at": "2025-09-22T09:05:00Z",
+      "category": [1, 4]
+    }
+  },
+  {
+    "model": "notes.note",
+    "pk": 4,
+    "fields": {
+      "text": "Экспериментирую с акварелью. Оказалось, что краски ведут себя совершенно иначе, чем масло. Вдохновляет...",
+      "author": 4,
+      "status": 3,
+      "created_at": "2025-09-23T18:20:00Z",
+      "category": [5]
+    }
+  },
+  {
+    "model": "notes.note",
+    "pk": 5,
+    "fields": {
+      "text": "Сегодня в зале попробовал новый план тренировок. Силовые + кардио. Чувствую прогресс...",
+      "author": 3,
+      "status": 1,
+      "created_at": "2025-09-23T20:50:00Z",
+      "category": [6, 3]
+    }
+  },
+  {
+    "model": "notes.note",
+    "pk": 6,
+    "fields": {
+      "text": "Пишу диплом по теме: «Применение машинного обучения в медицине». Интересно, но сложновато...",
+      "author": 1,
+      "status": 2,
+      "created_at": "2025-09-24T09:30:00Z",
+      "category": [4, 1]
+    }
+  },
+  {
+    "model": "notes.note",
+    "pk": 7,
+    "fields": {
+      "text": "Хочу поделиться своим плейлистом для продуктивной работы. Lo-Fi + минимализм дают концентрацию...",
+      "author": 2,
+      "status": 3,
+      "created_at": "2025-09-24T13:15:00Z",
+      "category": [3]
+    }
+  },
+  {
+    "model": "notes.note",
+    "pk": 8,
+    "fields": {
+      "text": "Недавно попробовала японскую кухню. Суши — это одно, но вот мисо-суп просто покорил!",
+      "author": 4,
+      "status": 3,
+      "created_at": "2025-09-24T19:40:00Z",
+      "category": [6, 5]
+    }
+  }
+]

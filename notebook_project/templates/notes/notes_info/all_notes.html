@@ -1,0 +1,18 @@
+{% extends 'notes/base.html' %}
+{% load static %}
+
+{% block title %} Все заметки {% endblock %}
+
+{% block content %}
+    <ul>
+        {% for note in note_list %}
+            <li>
+                <strong>Заметка: {{ note.text_preview }}</strong>
+                <p>Автор: {{ note.author }}</p>
+                <p>Статус: {{ note.status }}</p>
+                <p>Категории: {{ note.category|join:', ' }}</p>
+                <p>Создана: {{ note.created_at }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

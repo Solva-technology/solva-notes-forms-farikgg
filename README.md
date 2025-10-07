@@ -1,6 +1,7 @@
-# Note App — Часть #3: Формы (CRUD)
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=20610645&assignment_repo_type=AssignmentRepo)
+# Проект Notebook: CRUD, ModelForm
 
-Текущая цель — добавить возможность **создания, изменения и удаления заметок** с помощью Django Forms.  
+Проект Notebook расширился несколькими новыми фичами а так же исправлены старые недочеты 
 
 ---
 
@@ -13,10 +14,28 @@
 - список заметок (главная), страницу отдельной заметки;  
 - базовый шаблон `base.html`;  
 - запуск в Docker + PostgreSQL.  
-
-На этом этапе вы реализуете **CRUD для модели `Note`** через формы и шаблоны.  
+- CRUD операции при помощи ModelForm
 
 ---
+
+## Обновленная архитектура проекта
+```
+├── notebook_project/   # Django-проект
+|   ├── notebook_project/
+|   ├── fixtures/           # Папка с фикстурами для Моделей Notes
+|   ├── notes/              # Приложение с логикой
+|   ├── templates/          # HTML-шаблоны
+|   ├── static/             # Статические файлы (main.css и т.п.)
+|   ├── Dockerfile
+|   ├── entrypoint.sh       # инструкция при запуске контейнеров
+|   ├── manage.py
+|   └── requrements.txt
+├── docker-compose.yml
+└── README.md
+```
+---
+
+# Новые фичи
 
 ## Новые страницы (CRUD)
 
@@ -38,34 +57,22 @@
 
 ---
 
-## Требования
-
-- Использовать Django **ModelForm**.  
-- Все страницы форм наследуются от `base.html`.  
-- Ошибки валидации отображаются в шаблоне.  
-- Авторизация пока не требуется.  
-- Ранее сделанные страницы (список заметок, страница пользователя и т.д.) должны остаться рабочими.
-- Весь функцилнал визуально отображается на сайте в виде ссылок в шапе или у объекта.
-
----
-
-## Структура проекта (пример)
+### Запуск через Docker
 
 ```
-note_app/
-├── notes/
-│   ├── templates/notes/
-│   │   ├── note_form.html
-│   │   ├── note_confirm_delete.html
-│   │   ├── note_detail.html
-│   │   └── note_list.html
-│   ├── forms.py
-│   ├── views.py
-│   └── urls.py
-├── templates/base.html
-├── docker-compose.yml
-├── Dockerfile
-└── .env.example
+docker-compose up --build
 ```
 
 ---
+
+### Основные URL
+
+| Страница               | URL                           | Имя маршрута           |
+| ---------------------- | ----------------------------- | ---------------------- |
+| Главная                | `/`                           | `notes:all_notes`      |
+| Просмотр юзера по ID   | `/users/<int:user_id>/`       | `notes:user_profile`   |
+| Просмотр заметки по ID | `/notes/<int:note_id>/`       | `notes:note_detail`    |
+| Поиск                  | `/notes/search/`              | `notes:search`         |
+| Создание заметки       | `/notes/create/`              | `notes:create_note`    |
+| Редактирование заметки | `notes/<int:note_id>/edit/`   | `notes:edit_note`      |
+| Удаление заметки       | `notes/<int:note_id>/delete/` | `notes:delete_note`    |

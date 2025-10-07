@@ -1,0 +1,17 @@
+{% extends 'notes/base.html' %}
+{% load static %}
+
+{% block title %}Редактировать заметку{% endblock %}
+
+{% block content %}
+<div>
+  <h2>Редактирование заметки</h2>
+
+  <form method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type='submit'>Сохранить изменения</button>
+    <a href='{% url "notes:note_detail" note.pk %}' class='btn-primary'>Отмена</a>
+  </form>
+</div>
+{% endblock %}
