@@ -1,0 +1,18 @@
+{% extends 'notes/base.html' %}
+{% load static %}
+
+{% block title %}Удалить заметку{% endblock %}
+
+{% block content %}
+<div>
+  <h2>Удаление заметки</h2>
+  <p>Вы уверены, что хотите удалить заметку:</p>
+  <blockquote>{{ note.text|truncatechars:100 }}</blockquote>
+
+  <form method='post'>
+    {% csrf_token %}
+    <button type='submit'>Да, удалить</button>
+    <a href='{% url "notes:all_notes" %}' class='btn-primary'>Отмена</a>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'notes/base.html' %}
+{% load static %}
+
+{% block title %}Заметка №{{ note_detail.id }}{% endblock %}
+
+{% block content %}
+
+<h1>Заметка №{{ note_detail.id }}</h1>
+<p><strong>Текст:</strong> {{ note_detail.text }}</p>
+<p><strong>Автор:</strong> {{ note_detail.author.name }}</p>
+<p><strong>Email автора:</strong> {{ note_detail.author.email }}</p>
+
+{% if note_detail.author.bio %}
+<p><strong>Биография автора:</strong> {{ note_detail.author.bio }}</p>
+{% endif %}
+
+{% if note_detail.author.birth_date %}
+<p><strong>Дата рождения автора:</strong> {{ note_detail.author.birth_date }}</p>
+{% endif %}
+
+{% if note_detail.status %}
+<p><strong>Статус:</strong> {{ note_detail.status.name }}</p>
+<p><strong>Является финальным:</strong> {{ note_detail.status.is_final }}</p>
+{% endif %}
+
+<p><strong>Категории:</strong> {{ note_detail.category|join:", " }}</p>
+<p><strong>Дата создания:</strong> {{ note_detail.created_at }}</p>
+
+<a href='{% url "notes:edit_note" note_detail.id %}' class='btn-primary'>Редактировать</a>
+<a href='{% url "notes:delete_note" note_detail.id %}' class='btn-primary'>Удалить</a>
+<a href='{% url "notes:all_notes" %}' class='btn-primary'>Назад к списку заметок</a>
+
+{% endblock %}

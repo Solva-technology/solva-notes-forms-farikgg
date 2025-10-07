@@ -1,0 +1,21 @@
+{% extends 'notes/base.html' %}
+{% load static %}
+
+{% block title %}Профиль пользователя{% endblock %}
+
+{% block content %}
+  <h2>Профиль пользователя</h2>
+
+  <p><strong>Имя: </strong> {{ user_detail.name }}</p>
+  <p><strong>Email: </strong> {{ user_detail.email }}</p>
+  <p><strong>Биография: </strong> {{ user_detail.bio }}</p>
+  <p><strong>Дата рождения: </strong> {{ user_detail.birth_date }}</p>
+
+  <h3>Заметки пользователя</h3>
+        {% for note in user_detail.notes %}
+            <li>
+                <p><strong>Заметка: </strong>{{ note.text }}</p>
+                <p><strong>Статус: </strong>{{ note.status }}</p>
+            </li>
+        {% endfor %}
+{% endblock %}
